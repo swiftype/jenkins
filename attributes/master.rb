@@ -240,4 +240,9 @@ default['jenkins']['master'].tap do |master|
   # Keyserver to use. Disabled by default
   #
   master['repository_keyserver'] = nil
+
+  #
+  # Extra environment variables for the Jenkins process
+  #
+  master['extra_env_vars'] = {}
 end

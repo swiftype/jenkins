@@ -141,3 +141,10 @@ JENKINS_HANDLER_IDLE="20"
 <% if node['jenkins']['master']['jenkins_args'] %>
 JENKINS_ARGS="$JENKINS_ARGS <%= node['jenkins']['master']['jenkins_args'] %>"
 <% end %>
+
+##
+## Extra environment variables
+##
+<% node['jenkins']['master']['extra_env_vars'].each do |name, value| -%>
+export <%= name %>="<%= value %>"
+<% end -%>
